@@ -14,13 +14,29 @@ class Student extends Person {
       : name = '$cuntry.$city',
         super(name, age);
 
+  /// getter 方法
+  String get school => _school;
+
+  /// setter 方法
+  set school(String value) {
+    this._school = value;
+  }
+
+  static doPrint() {
+    return "------doPrint-----";
+  }
+
   ///命名构造方法【类名+.方法名】
   ///使用命名构造方法为类实现多个构造方法
   Student.cover(Student student) : super(student.name, student.age) {
     print('命名构造方法');
   }
 
-  //命名构造方法： factory [类名+.+方法名]
+  @override
+  String toString() {
+    return 'Student{_school: $_school, city: $city, cuntry: $cuntry, name: $name}';
+  } //命名构造方法： factory [类名+.+方法名]
+
   factory Student.stu(Student stu) {
     return Student(stu._school, stu.name, stu.age);
   }
@@ -62,3 +78,33 @@ class Person {
     return 'Person{name: $name, age: $age}';
   }
 }
+
+/// 继承抽象类，必须实现抽象方法，否则自己用 abstract 标记
+class StudyFlutter extends Study{
+  @override
+  void study() {
+    print('Leraning Flutter.');
+  }
+}
+
+
+/// 抽象类，用 abstract 标识，不能被实例化，可以有自己的方法
+abstract class Study {
+  void study();
+}
+
+///为类添加特征：mixins
+///mixins 是在多个类层次结构中重用代码的一种方式
+///要使用 mixins ，在 with 关键字后面跟一个或多个 mixin 的名字(用逗号分开)，并且with要用在extends关键字之后
+///mixins的特征：实现 mixin ，就创建一个继承 Object 类的子类(不能继承其他类)，不声明任何构造方法，不调用 super
+///猜猜上面的类中哪个是mixin？
+class Test extends Person with Study{
+  Test(String name, int age) : super(name, age);
+
+  @override
+  void study() {
+
+  }
+}
+
+
