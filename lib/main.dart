@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dart/data_type.dart';
+import 'package:flutter_dart/function_learn.dart';
 import 'package:flutter_dart/oop_learn.dart';
 
 void main() {
@@ -73,7 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    _oopLearn();
+    // _oopLearn();
+    _testFunctionLearn();
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -108,5 +110,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
     StudyFlutter studyFlutter =  StudyFlutter();
     studyFlutter.study();
+  }
+
+  _testFunctionLearn(){
+    print('-------_testFunctionLearn----------');
+    TestFunction testFunction = TestFunction();
+    testFunction.start();
   }
 }
