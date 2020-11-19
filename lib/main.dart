@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dart/data_type.dart';
 import 'package:flutter_dart/function_learn.dart';
+import 'package:flutter_dart/generic_learn.dart';
 import 'package:flutter_dart/oop_learn.dart';
 
 void main() {
@@ -76,6 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     // _oopLearn();
     _testFunctionLearn();
+    _testGeneric();
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -116,5 +118,11 @@ class _MyHomePageState extends State<MyHomePage> {
     print('-------_testFunctionLearn----------');
     TestFunction testFunction = TestFunction();
     testFunction.start();
+  }
+
+  _testGeneric(){
+    print('-------_testGeneric----------');
+    TestGeneric testGeneric = TestGeneric();
+    testGeneric.start();
   }
 }
